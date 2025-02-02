@@ -1,0 +1,148 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1.5s ease-in-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1.5s ease-in-out forwards;
+}
+
+.animate-scale-in {
+    animation: scale-in 1.5s ease-in-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 1.5s infinite;
+}
+
+.contacts-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+}
+
+.contacts-main {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.contacts-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+    @extend .animate-fade-in-up;
+}
+
+.contacts-form-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    @extend .animate-scale-in;
+}
+
+.contacts-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacts-label {
+    font-weight: 600;
+    color: #374151;
+}
+
+.contacts-input,
+.contacts-textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+    }
+}
+
+.contacts-button {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    @extend .animate-pulse;
+
+    &:hover {
+        background-color: #1e40af;
+    }
+}
+
+.contacts-info {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: #1f2937;
+    @extend .animate-fade-in;
+}
+
+.contacts-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    @extend .animate-fade-in-up;
+}
